@@ -38,10 +38,11 @@ with open(ctm_file_path, "r", encoding="utf-8") as ctm_file:
         #     # Load the .wav file
         #     wav_file = r"audio_data\64528549bbb039e9f20eab01.wav"
         #     sample_rate, audio_data = wavfile.read(wav_file)
+        ##Create a time axis for the waveform
         #     time_axis = np.arange(0, len(audio_data)) / sample_rate
         #     z=True
 
-        # Create a time axis for the waveform
+
 
     if z:
         plt.figure(figsize=(10, 8))
