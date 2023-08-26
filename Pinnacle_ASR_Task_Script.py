@@ -10,6 +10,7 @@ sys.stdout.reconfigure(encoding='utf-8')
 font_path = r"Mangal Regular.ttf"
 custom_font = FontProperties(fname=font_path)
 word_alignments = []
+audio_files=["1S00011-64de11fdd1033954ee0031f4", "1S00011-64528549bbb039e9f20eab01"]
 colory = ['red', 'blue', 'green', 'pink', 'orange', 'purple', 'cyan', 'brown', 'gray', 'lime','magenta','olive','bisque','burlywood','gold','indigo','navy','yellowgreen']
 z=False
 with open(ctm_file_path, "r", encoding="utf-8") as ctm_file:
@@ -23,27 +24,13 @@ with open(ctm_file_path, "r", encoding="utf-8") as ctm_file:
         word = " ".join(parts[4:])  # Combine remaining parts as the word
 
         # Process the extracted information
-        if (audio_id=="1S00011-64de11fdd1033954ee0031f4"):
+        if (audio_id==audio_files[0] or audio_id==audio_files[1):
             word_alignments.append([audio_id, start_time, duration, word])
             # Load the .wav file
             wav_file = r"audio_data\64de11fdd1033954ee0031f4.wav"
             sample_rate, audio_data = wavfile.read(wav_file)
             time_axis = np.arange(0, len(audio_data)) / sample_rate
             z=True
-
-##Use the below code for generating the output audio transcription of the second audio file while commenting out the above if block.
-
-        # if(audio_id=="1S00011-64528549bbb039e9f20eab01"):
-        #     word_alignments.append([audio_id, start_time, duration, word])
-        #     # Load the .wav file
-        #     wav_file = r"audio_data\64528549bbb039e9f20eab01.wav"
-        #     sample_rate, audio_data = wavfile.read(wav_file)
-        ##Create a time axis for the waveform
-        #     time_axis = np.arange(0, len(audio_data)) / sample_rate
-        #     z=True
-
-
-
     if z:
         plt.figure(figsize=(10, 8))
         plt.plot(time_axis, audio_data)
