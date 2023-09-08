@@ -33,4 +33,4 @@ The script `Pinnacle_ASR_Task_Script.py` processes the CTM file and audio files 
 
 ## Outputs
 1. The Waveform and the corresponding words for the Audio 1 are marked in the plot as, ![Output_Audio_1](Output_Audio_1.png)
-2. The Waveform and the corresponding words for the Audio 1 are marked in the plot as, ![Output_Audio_2](Output_Audio_2.png)
+2. The Waveform and the corresponding words for the Audio 2 are marked in the plot as, ![Output_Audio_2](Output_Audio_2.png)
